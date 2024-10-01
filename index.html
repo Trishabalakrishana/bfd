@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /*@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');*/
+        /*@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap'); /* Added for more dynamic heading font */
+        
+        @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+    </style>
+    <title>HAPPY BOYFRIEND'S DAY CUTIE</title>
+    <style>
+        body {
+            background-image: url("download\ \(1\).jpeg"); 
+            background-position: center; 
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: 'Crimson Text', serif;
+            overflow: hidden; /* Hide heart overflow */
+        }
+
+        h1 {
+            color: rgb(133, 35, 35);
+            font-family: 'Pacifico', cursive; /* Custom dynamic font */
+            animation: bounceIn 1s ease; /* Animation */
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: rgb(128, 64, 128);
+            font-size: 12px;
+            align-self: flex-start;
+            margin-left: 20px;
+        }
+
+        .background-rectangle {
+            position: absolute;
+            top: 10%;
+            left: 15%;
+            width: 70%;
+            height: 80%;
+            background-color: rgba(255, 182, 193, 0.5);
+            z-index: -1;
+            border-radius: 20px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .rectangle {
+            position: absolute;
+            top: 2%;
+            left: 10%;
+            width: 125px;
+            height: 180px;
+            background-image: url(image1.jpg) ;/* Add your photo URL here */
+            background-size: 100%; /* Make the image cover the entire rectangle */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat;
+            transform: rotate(-25deg); /* Tilt the rectangle */
+            border-radius: 6px;
+            z-index: -1;
+            animation: fadeIn 1s ease;
+        }
+
+        .rectangle1 {
+            position: absolute;
+            bottom: 4%;
+            right: 10%;
+            width: 125px;
+            height: 180px;
+            background-image: url("image2.jpg"); /* Add your second photo URL here */
+            background-size: cover; /* Make the image cover the entire rectangle */
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: rotate(-25deg); /* Tilt the rectangle */
+            border-radius: 6px;
+            z-index: -1;
+            animation: fadeIn 1s ease;
+        }
+
+        .cool-text {
+    position: absolute;
+    bottom: 0px; /* Adjust this value to move the text as needed */
+    right: 10%; /* Align with the rectangle1 */
+    font-family: 'Pacifico', cursive;
+    color: #572626;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    animation: glowText 2s ease-in-out infinite;
+}
+
+        @keyframes glowText {
+            0% {
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+                opacity: 0.8;
+            }
+            50% {
+                text-shadow: 2px 2px 20px rgba(255, 102, 102, 0.8);
+                opacity: 1;
+            }
+            100% {
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+                opacity: 0.8;
+            }
+        }
+
+        .my-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ff9999;
+            border: none;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .my-button:hover {
+            background-color: #ff6666;
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Modal Background */
+        .modal-bg {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        /* Modal Box */
+        .modal {
+            background-color: #ffe6e6;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Close Button */
+        .close-btn {
+            background-color: #ff6666;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .close-btn:hover {
+            background-color: #cc0000;
+        }
+
+        /* Keyframe Animations */
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            80% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Floating Hearts */
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: pink;
+            clip-path: polygon(50% 0%, 100% 40%, 80% 100%, 50% 80%, 20% 100%, 0% 40%);
+            animation: floatHeart 4s ease-in-out infinite;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-100px) scale(1.2);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-200px) scale(0.8);
+                opacity: 0;
+            }
+        }
+
+        .heart:nth-child(odd) {
+            background-color: #ff6666;
+            animation-duration: 3s;
+        }
+
+        .heart:nth-child(even) {
+            background-color: #ff9999;
+            animation-duration: 4.5s;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>Happiee Boyfriend's Dayy Pookieee<3</h1>
+   
+    <div class="background-rectangle"></div>
+    <div class="rectangle"></div>
+    <div class="rectangle1"></div>
+
+    <div class="cool-text">look at you hottiee</div>
+
+    <!-- Custom Button to Trigger Modal and Floating Hearts -->
+    <button class="my-button" id="alertButton">Click me!</button>
+
+    <!-- Modal Structure -->
+    <div class="modal-bg" id="customModal">
+        <div class="modal">
+            <h2>I Loveee Youuuu</h2>
+            <button class="close-btn" id="closeModalBtn">hehehehehe</button>
+        </div>
+    </div>
+
+    <!-- Heart container -->
+    <div id="heart-container"></div>
+
+    <script>
+        // Show the custom modal and trigger hearts
+        document.getElementById("alertButton").addEventListener("click", function() {
+            document.getElementById("customModal").style.display = "flex";
+            startHearts();
+        });
+
+        // Close the modal when clicking "OK"
+        document.getElementById("closeModalBtn").addEventListener("click", function() {
+            document.getElementById("customModal").style.display = "none";
+            stopHearts();
+        });
+
+        // Floating hearts effect
+        function startHearts() {
+            const heartContainer = document.getElementById("heart-container");
+            for (let i = 0; i < 50; i++) {
+                const heart = document.createElement("div");
+                heart.classList.add("heart");
+                heart.style.left = `${Math.random() * 100}vw`;
+                heart.style.top = `${Math.random() * 100}vh`;
+                heartContainer.appendChild(heart);
+            }
+        }
+
+        function stopHearts() {
+            const heartContainer = document.getElementById("heart-container");
+            heartContainer.innerHTML = ""; // Remove hearts
+        }
+    </script>
+    
+</body>
+</html>
